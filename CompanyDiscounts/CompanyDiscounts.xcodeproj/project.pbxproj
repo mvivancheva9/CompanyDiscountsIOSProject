@@ -14,6 +14,7 @@
 		001A681E1C5F8DF70083D416 /* CompanyDiscounts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 001A681C1C5F8DF70083D416 /* CompanyDiscounts.xcdatamodeld */; };
 		001A68201C5F8DF70083D416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001A681F1C5F8DF70083D416 /* Assets.xcassets */; };
 		001A68231C5F8DF70083D416 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001A68211C5F8DF70083D416 /* LaunchScreen.storyboard */; };
+		001A682C1C5FE26B0083D416 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001A682B1C5FE26B0083D416 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		001A681F1C5F8DF70083D416 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001A68221C5F8DF70083D416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001A68241C5F8DF70083D416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		001A682B1C5FE26B0083D416 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				001A682C1C5FE26B0083D416 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 		001A68041C5F8DF60083D416 = {
 			isa = PBXGroup;
 			children = (
+				001A682B1C5FE26B0083D416 /* CoreLocation.framework */,
 				001A680F1C5F8DF70083D416 /* CompanyDiscounts */,
 				001A680E1C5F8DF70083D416 /* Products */,
 			);
@@ -60,10 +64,9 @@
 		001A680F1C5F8DF70083D416 /* CompanyDiscounts */ = {
 			isa = PBXGroup;
 			children = (
+				001A682A1C5FD1BA0083D416 /* View Controllers */,
 				001A68131C5F8DF70083D416 /* AppDelegate.h */,
 				001A68141C5F8DF70083D416 /* AppDelegate.m */,
-				001A68161C5F8DF70083D416 /* ViewController.h */,
-				001A68171C5F8DF70083D416 /* ViewController.m */,
 				001A68191C5F8DF70083D416 /* Main.storyboard */,
 				001A681F1C5F8DF70083D416 /* Assets.xcassets */,
 				001A68211C5F8DF70083D416 /* LaunchScreen.storyboard */,
@@ -80,6 +83,15 @@
 				001A68111C5F8DF70083D416 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		001A682A1C5FD1BA0083D416 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				001A68161C5F8DF70083D416 /* ViewController.h */,
+				001A68171C5F8DF70083D416 /* ViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
