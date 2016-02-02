@@ -14,7 +14,20 @@
 		001A681E1C5F8DF70083D416 /* CompanyDiscounts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 001A681C1C5F8DF70083D416 /* CompanyDiscounts.xcdatamodeld */; };
 		001A68201C5F8DF70083D416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001A681F1C5F8DF70083D416 /* Assets.xcassets */; };
 		001A68231C5F8DF70083D416 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001A68211C5F8DF70083D416 /* LaunchScreen.storyboard */; };
-		001A682C1C5FE26B0083D416 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001A682B1C5FE26B0083D416 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		0098F1DE1C60CA97008CEF76 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 0098F1DD1C60CA97008CEF76 /* Business.m */; };
+		0098F22B1C611D86008CEF76 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22A1C611D86008CEF76 /* Bolts.framework */; };
+		0098F22D1C611DA7008CEF76 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22C1C611DA7008CEF76 /* Parse.framework */; };
+		0098F22F1C611E34008CEF76 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22E1C611E34008CEF76 /* AudioToolbox.framework */; };
+		0098F2311C611E40008CEF76 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F2301C611E40008CEF76 /* CFNetwork.framework */; };
+		0098F2331C611E52008CEF76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F2321C611E52008CEF76 /* CoreGraphics.framework */; };
+		0098F2351C611E61008CEF76 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F2341C611E61008CEF76 /* QuartzCore.framework */; };
+		0098F2371C611E6D008CEF76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F2361C611E6D008CEF76 /* Security.framework */; };
+		0098F2391C611E75008CEF76 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F2381C611E75008CEF76 /* StoreKit.framework */; };
+		0098F23B1C611E88008CEF76 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F23A1C611E88008CEF76 /* SystemConfiguration.framework */; };
+		0098F23D1C611E9B008CEF76 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F23C1C611E9B008CEF76 /* libz.tbd */; };
+		0098F23F1C611EAF008CEF76 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F23E1C611EAF008CEF76 /* libsqlite3.tbd */; };
+		00A503931C60BAE700186492 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001A682B1C5FE26B0083D416 /* CoreLocation.framework */; };
+		00A503961C60BCCE00186492 /* AddBusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A503951C60BCCE00186492 /* AddBusinessViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +43,22 @@
 		001A68221C5F8DF70083D416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001A68241C5F8DF70083D416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001A682B1C5FE26B0083D416 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0098F1DC1C60CA97008CEF76 /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
+		0098F1DD1C60CA97008CEF76 /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
+		0098F2281C611D72008CEF76 /* CompanyDiscounts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CompanyDiscounts; sourceTree = "<group>"; };
+		0098F22A1C611D86008CEF76 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = CompanyDiscounts/Bolts.framework; sourceTree = "<group>"; };
+		0098F22C1C611DA7008CEF76 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = CompanyDiscounts/Parse.framework; sourceTree = "<group>"; };
+		0098F22E1C611E34008CEF76 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0098F2301C611E40008CEF76 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0098F2321C611E52008CEF76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0098F2341C611E61008CEF76 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0098F2361C611E6D008CEF76 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0098F2381C611E75008CEF76 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		0098F23A1C611E88008CEF76 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0098F23C1C611E9B008CEF76 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0098F23E1C611EAF008CEF76 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		00A503941C60BCCE00186492 /* AddBusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBusinessViewController.h; sourceTree = "<group>"; };
+		00A503951C60BCCE00186492 /* AddBusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBusinessViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +66,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001A682C1C5FE26B0083D416 /* CoreLocation.framework in Frameworks */,
+				0098F23F1C611EAF008CEF76 /* libsqlite3.tbd in Frameworks */,
+				0098F23D1C611E9B008CEF76 /* libz.tbd in Frameworks */,
+				0098F23B1C611E88008CEF76 /* SystemConfiguration.framework in Frameworks */,
+				0098F2391C611E75008CEF76 /* StoreKit.framework in Frameworks */,
+				0098F2371C611E6D008CEF76 /* Security.framework in Frameworks */,
+				0098F2351C611E61008CEF76 /* QuartzCore.framework in Frameworks */,
+				0098F2331C611E52008CEF76 /* CoreGraphics.framework in Frameworks */,
+				0098F2311C611E40008CEF76 /* CFNetwork.framework in Frameworks */,
+				0098F22F1C611E34008CEF76 /* AudioToolbox.framework in Frameworks */,
+				00A503931C60BAE700186492 /* CoreLocation.framework in Frameworks */,
+				0098F22D1C611DA7008CEF76 /* Parse.framework in Frameworks */,
+				0098F22B1C611D86008CEF76 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +87,18 @@
 		001A68041C5F8DF60083D416 = {
 			isa = PBXGroup;
 			children = (
+				0098F23E1C611EAF008CEF76 /* libsqlite3.tbd */,
+				0098F23C1C611E9B008CEF76 /* libz.tbd */,
+				0098F23A1C611E88008CEF76 /* SystemConfiguration.framework */,
+				0098F2381C611E75008CEF76 /* StoreKit.framework */,
+				0098F2361C611E6D008CEF76 /* Security.framework */,
+				0098F2341C611E61008CEF76 /* QuartzCore.framework */,
+				0098F2321C611E52008CEF76 /* CoreGraphics.framework */,
+				0098F2301C611E40008CEF76 /* CFNetwork.framework */,
+				0098F22E1C611E34008CEF76 /* AudioToolbox.framework */,
+				0098F22C1C611DA7008CEF76 /* Parse.framework */,
+				0098F22A1C611D86008CEF76 /* Bolts.framework */,
+				0098F2281C611D72008CEF76 /* CompanyDiscounts */,
 				001A682B1C5FE26B0083D416 /* CoreLocation.framework */,
 				001A680F1C5F8DF70083D416 /* CompanyDiscounts */,
 				001A680E1C5F8DF70083D416 /* Products */,
@@ -64,6 +116,7 @@
 		001A680F1C5F8DF70083D416 /* CompanyDiscounts */ = {
 			isa = PBXGroup;
 			children = (
+				0098F1DB1C60CA75008CEF76 /* Models */,
 				001A682A1C5FD1BA0083D416 /* View Controllers */,
 				001A68131C5F8DF70083D416 /* AppDelegate.h */,
 				001A68141C5F8DF70083D416 /* AppDelegate.m */,
@@ -90,8 +143,19 @@
 			children = (
 				001A68161C5F8DF70083D416 /* ViewController.h */,
 				001A68171C5F8DF70083D416 /* ViewController.m */,
+				00A503941C60BCCE00186492 /* AddBusinessViewController.h */,
+				00A503951C60BCCE00186492 /* AddBusinessViewController.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0098F1DB1C60CA75008CEF76 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0098F1DC1C60CA97008CEF76 /* Business.h */,
+				0098F1DD1C60CA97008CEF76 /* Business.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,7 +231,9 @@
 				001A681E1C5F8DF70083D416 /* CompanyDiscounts.xcdatamodeld in Sources */,
 				001A68181C5F8DF70083D416 /* ViewController.m in Sources */,
 				001A68151C5F8DF70083D416 /* AppDelegate.m in Sources */,
+				0098F1DE1C60CA97008CEF76 /* Business.m in Sources */,
 				001A68121C5F8DF70083D416 /* main.m in Sources */,
+				00A503961C60BCCE00186492 /* AddBusinessViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,8 +345,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CompanyDiscounts",
+				);
 				INFOPLIST_FILE = CompanyDiscounts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = " -ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "Margarita-Ivancheva.CompanyDiscounts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -290,8 +362,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CompanyDiscounts",
+				);
 				INFOPLIST_FILE = CompanyDiscounts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = " -ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "Margarita-Ivancheva.CompanyDiscounts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -316,6 +393,7 @@
 				001A68291C5F8DF70083D416 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

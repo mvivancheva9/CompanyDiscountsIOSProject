@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -20,6 +21,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     _window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3.png"]];
+    
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"EGodPPwNfalOBxi3HYf4mPoIw87ILsDoBcy3AbH0"
+                  clientKey:@"OazWV3HRgkKcgdleBb0DdqVD2FAPoYbBQKJD0gLx"];
     
     return YES;
 }
