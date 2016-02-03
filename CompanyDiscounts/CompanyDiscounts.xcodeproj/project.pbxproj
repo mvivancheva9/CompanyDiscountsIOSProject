@@ -18,6 +18,7 @@
 		0062B16E1C62332B0083B24E /* AddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B16D1C62332B0083B24E /* AddLocationViewController.m */; };
 		0062B1701C6246090083B24E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0062B16F1C6246090083B24E /* MapKit.framework */; };
 		0062B1731C624C630083B24E /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1721C624C630083B24E /* MapPin.m */; };
+		0062B1761C627C510083B24E /* AllBusinessesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1751C627C510083B24E /* AllBusinessesCollectionViewController.m */; };
 		0098F1DE1C60CA97008CEF76 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 0098F1DD1C60CA97008CEF76 /* Business.m */; };
 		0098F22B1C611D86008CEF76 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22A1C611D86008CEF76 /* Bolts.framework */; };
 		0098F22D1C611DA7008CEF76 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22C1C611DA7008CEF76 /* Parse.framework */; };
@@ -54,6 +55,8 @@
 		0062B16F1C6246090083B24E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0062B1711C624C630083B24E /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
 		0062B1721C624C630083B24E /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
+		0062B1741C627C510083B24E /* AllBusinessesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllBusinessesCollectionViewController.h; sourceTree = "<group>"; };
+		0062B1751C627C510083B24E /* AllBusinessesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllBusinessesCollectionViewController.m; sourceTree = "<group>"; };
 		0098F1DC1C60CA97008CEF76 /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
 		0098F1DD1C60CA97008CEF76 /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
 		0098F22A1C611D86008CEF76 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = CompanyDiscounts/Bolts.framework; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				00A503951C60BCCE00186492 /* AddBusinessViewController.m */,
 				0062B16C1C62332B0083B24E /* AddLocationViewController.h */,
 				0062B16D1C62332B0083B24E /* AddLocationViewController.m */,
+				0062B1741C627C510083B24E /* AllBusinessesCollectionViewController.h */,
+				0062B1751C627C510083B24E /* AllBusinessesCollectionViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				001A68181C5F8DF70083D416 /* ViewController.m in Sources */,
 				001A68151C5F8DF70083D416 /* AppDelegate.m in Sources */,
 				0098F1DE1C60CA97008CEF76 /* Business.m in Sources */,
+				0062B1761C627C510083B24E /* AllBusinessesCollectionViewController.m in Sources */,
 				001A68121C5F8DF70083D416 /* main.m in Sources */,
 				00A503961C60BCCE00186492 /* AddBusinessViewController.m in Sources */,
 				0062B16E1C62332B0083B24E /* AddLocationViewController.m in Sources */,

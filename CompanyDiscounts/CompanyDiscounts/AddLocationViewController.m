@@ -45,11 +45,8 @@
     [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
     
     MapPin *annotation = [[MapPin alloc] init];
-    
     annotation.coordinate = touchMapCoordinate;
-    annotation.subTitle = @"Subtitle";
-    annotation.title = @"Title";
-    
+    annotation.title = self.business.name;
     [self.mapView addAnnotation:annotation];
     
     float latitude = annotation.coordinate.latitude;
@@ -57,17 +54,20 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"Business"];
     [query whereKey:@"name" equalTo:self.business.name];
-    NSArray* currentBusiness = [query findObjects];
-    
-    PFObject *bs = currentBusiness[0];
-    
-    NSString *businessId = bs.objectId;
-    
-    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
-    
-    Location *location = [Location withGeoPoint:point andWithBusinessId: businessId];
-    
-    [location saveInBackground];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *currentBusiness, NSError *error) {
+        if (!currentBusiness) {
+            //TODO: Fix this with alert
+            NSLog(@"The getFirstObject request failed.");
+        } else {
+            NSString *businessId = currentBusiness.objectId;
+            
+            PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
+            
+            Location *location = [Location withGeoPoint:point andWithBusinessId: businessId];
+            
+            [location saveInBackground];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
