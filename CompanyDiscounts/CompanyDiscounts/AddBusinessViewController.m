@@ -8,10 +8,11 @@
 
 #import "AddBusinessViewController.h"
 #import "Business.h"
+#import "AddLocationViewController.h"
 
 
 
-@interface AddBusinessViewController ()
+@interface AddBusinessViewController () <UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *businessNameInput;
 - (IBAction)addBusinessBtnTapped:(id)sender;
 
@@ -48,6 +49,14 @@
     Business *business = [Business withName:name];
     
     [business saveInBackground];
+    
+    NSString *storyBoardId = @"addLocationScene";
+    
+    AddLocationViewController *addLocationVC =
+    [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+    addLocationVC.business = business;
+    
+    [self.navigationController pushViewController:addLocationVC animated:YES];
     
 }
 @end

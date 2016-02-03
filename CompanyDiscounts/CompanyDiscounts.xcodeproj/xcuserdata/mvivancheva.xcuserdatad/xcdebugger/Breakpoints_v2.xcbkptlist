@@ -57,13 +57,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CompanyDiscounts/Business.m"
-            timestampString = "476136473.479871"
+            filePath = "CompanyDiscounts/Location.h"
+            timestampString = "476212027.867394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "+withName:"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "+parseClassName"
+            landmarkType = "4">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDiscounts/AddLocationViewController.m"
+            timestampString = "476212504.812777"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-addPinToMap:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,13 +89,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CompanyDiscounts/Business.m"
-            timestampString = "476136473.479871"
+            filePath = "CompanyDiscounts/AddLocationViewController.m"
+            timestampString = "476212504.812777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "+withName:"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-addPinToMap:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CompanyDiscounts/AddBusinessViewController.m"
-            timestampString = "476135612.902657"
+            filePath = "CompanyDiscounts/AddLocationViewController.m"
+            timestampString = "476212504.812777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-addBusinessBtnTapped:"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-addPinToMap:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
