@@ -10,15 +10,21 @@
 #import <Parse/Parse.h>
 #import "MapPin.h"
 #import "Location.h"
+//@import MapKit;
 
-@interface BusinessDetailsViewController ()
+@interface BusinessDetailsViewController () <MKMapViewDelegate>
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
 @implementation BusinessDetailsViewController
 
+@synthesize mapView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.locationManager = [[CLLocationManager alloc] init];
     // Do any additional setup after loading the view.
     
     PFQuery *query = [PFQuery queryWithClassName:@"Business"];
@@ -44,10 +50,10 @@
                         MapPin *annotation = [[MapPin alloc] init];
                         annotation.coordinate =  CLLocationCoordinate2DMake(latitude, longitude);
                         annotation.title = self.business.name;
-                        [self.mapView addAnnotation:annotation];
+                        [mapView addAnnotation:annotation];
                     }
                 } else {
-                    // Log details of the failure
+                    //TODO: Add Alert
                     NSLog(@"Error: %@ %@", error, [error userInfo]);
                 }
             }];
@@ -55,6 +61,43 @@
         }
     }];
 
+    
+}
+
+-(IBAction)GetLocation:(id)sender{
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestAlwaysAuthorization];
+
+    mapView.showsUserLocation = YES;
+
+}
+- (IBAction)setMap:(id)sender {
+    
+    switch (((UISegmentedControl *)sender).selectedSegmentIndex) {
+        case 0:
+            mapView.mapType = MKMapTypeStandard;
+            break;
+        case 1:
+            mapView.mapType = MKMapTypeSatellite;
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (IBAction)getDirections:(id)sender{
+    
+    
+    NSString *urlString = @"http://maps.apple.com/maps?daddr=";
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    MKPointAnnotation *annotation=(MKPointAnnotation*)view.annotation;
+    self.tappedCoord = annotation.coordinate;
     
 }
 

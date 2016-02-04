@@ -11,10 +11,18 @@
 #import "Location.h"
 #import <MapKit/MapKit.h>
 
-@interface BusinessDetailsViewController : ViewController
+@interface BusinessDetailsViewController : ViewController{
+    MKMapView *mapView;
+}
 
 @property (strong, nonatomic) Business *business;
 @property (strong, nonatomic) Location *location;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
+@property CLLocationCoordinate2D tappedCoord;
 
+-(IBAction)GetLocation: (id)sender;
+
+- (IBAction)setMap:(id)sender;
+
+- (IBAction)getDirections:(id)sender;
 @end

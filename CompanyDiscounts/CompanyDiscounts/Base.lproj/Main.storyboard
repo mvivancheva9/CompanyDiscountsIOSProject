@@ -426,14 +426,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dPq-LS-Vjz">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ofY-gj-toO">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PI-TS-IGQ">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnG-fm-dVt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" id="tag-7N-W5b">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="jjD-JJ-Y8Y">
+                                    <barButtonItem style="plain" id="ojv-SK-2NJ">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" id="s5O-nb-eUq">
                                             <rect key="frame" x="-60" y="-14" width="121" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
@@ -441,56 +441,69 @@
                                                 <segment title="Satelite"/>
                                             </segments>
                                             <connections>
-                                                <action selector="setMap:" destination="69u-AO-1mI" eventType="valueChanged" id="eUW-pX-ZvM"/>
+                                                <action selector="setMap:" destination="9Od-gp-Of0" eventType="valueChanged" id="Yvz-M2-ihd"/>
                                             </connections>
                                         </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem title="My Location" id="Bfp-nc-0rJ">
+                                        <connections>
+                                            <action selector="GetLocation:" destination="9Od-gp-Of0" id="SlD-Cy-P5f"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Directions" id="X02-lr-iU1">
+                                        <connections>
+                                            <action selector="getDirections:" destination="9Od-gp-Of0" id="VR1-4m-W96"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="6PI-TS-IGQ" secondAttribute="trailing" id="BMD-pK-5m1"/>
-                            <constraint firstItem="6PI-TS-IGQ" firstAttribute="leading" secondItem="39j-F4-FIg" secondAttribute="leading" id="BTe-cm-q0O"/>
-                            <constraint firstItem="6PI-TS-IGQ" firstAttribute="top" secondItem="dPq-LS-Vjz" secondAttribute="bottom" constant="16" id="CpW-Ff-E5e"/>
-                            <constraint firstItem="dPq-LS-Vjz" firstAttribute="top" secondItem="xqt-Nx-sJw" secondAttribute="bottom" id="Qbn-QH-NZj"/>
-                            <constraint firstItem="dPq-LS-Vjz" firstAttribute="leading" secondItem="39j-F4-FIg" secondAttribute="leadingMargin" id="XY3-Xy-0lJ"/>
-                            <constraint firstItem="6PI-TS-IGQ" firstAttribute="centerX" secondItem="dPq-LS-Vjz" secondAttribute="centerX" id="d35-Wr-HwN"/>
-                            <constraint firstItem="6PI-TS-IGQ" firstAttribute="bottom" secondItem="dtn-tt-T5v" secondAttribute="top" id="eAt-wf-tKy"/>
+                            <constraint firstItem="gnG-fm-dVt" firstAttribute="bottom" secondItem="dtn-tt-T5v" secondAttribute="top" id="4Je-eX-5nb"/>
+                            <constraint firstItem="ofY-gj-toO" firstAttribute="top" secondItem="xqt-Nx-sJw" secondAttribute="bottom" constant="8" symbolic="YES" id="6of-zX-4m2">
+                                <variation key="heightClass=regular-widthClass=compact" constant="41"/>
+                            </constraint>
+                            <constraint firstItem="ofY-gj-toO" firstAttribute="centerX" secondItem="gnG-fm-dVt" secondAttribute="centerX" id="be7-rL-Vbo"/>
+                            <constraint firstItem="gnG-fm-dVt" firstAttribute="top" secondItem="ofY-gj-toO" secondAttribute="bottom" constant="21" id="btr-WA-HbE">
+                                <variation key="heightClass=regular-widthClass=compact" constant="17"/>
+                            </constraint>
+                            <constraint firstItem="ofY-gj-toO" firstAttribute="leading" secondItem="39j-F4-FIg" secondAttribute="leadingMargin" id="eaZ-yF-fru"/>
+                            <constraint firstItem="gnG-fm-dVt" firstAttribute="leading" secondItem="39j-F4-FIg" secondAttribute="leading" id="gBo-Mk-Erh"/>
+                            <constraint firstAttribute="trailing" secondItem="gnG-fm-dVt" secondAttribute="trailing" id="hJh-dU-B14"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="dPq-LS-Vjz"/>
-                                <exclude reference="6PI-TS-IGQ"/>
+                                <exclude reference="ofY-gj-toO"/>
+                                <exclude reference="gnG-fm-dVt"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="BMD-pK-5m1"/>
-                                <exclude reference="BTe-cm-q0O"/>
-                                <exclude reference="CpW-Ff-E5e"/>
-                                <exclude reference="d35-Wr-HwN"/>
-                                <exclude reference="eAt-wf-tKy"/>
-                                <exclude reference="Qbn-QH-NZj"/>
-                                <exclude reference="XY3-Xy-0lJ"/>
+                                <exclude reference="6of-zX-4m2"/>
+                                <exclude reference="be7-rL-Vbo"/>
+                                <exclude reference="eaZ-yF-fru"/>
+                                <exclude reference="4Je-eX-5nb"/>
+                                <exclude reference="btr-WA-HbE"/>
+                                <exclude reference="gBo-Mk-Erh"/>
+                                <exclude reference="hJh-dU-B14"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="dPq-LS-Vjz"/>
-                                <include reference="6PI-TS-IGQ"/>
+                                <include reference="ofY-gj-toO"/>
+                                <include reference="gnG-fm-dVt"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="BMD-pK-5m1"/>
-                                <include reference="BTe-cm-q0O"/>
-                                <include reference="CpW-Ff-E5e"/>
-                                <include reference="d35-Wr-HwN"/>
-                                <include reference="eAt-wf-tKy"/>
-                                <include reference="Qbn-QH-NZj"/>
-                                <include reference="XY3-Xy-0lJ"/>
+                                <include reference="6of-zX-4m2"/>
+                                <include reference="be7-rL-Vbo"/>
+                                <include reference="eaZ-yF-fru"/>
+                                <include reference="4Je-eX-5nb"/>
+                                <include reference="btr-WA-HbE"/>
+                                <include reference="gBo-Mk-Erh"/>
+                                <include reference="hJh-dU-B14"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="dPq-LS-Vjz" id="n6l-K5-yNx"/>
+                        <outlet property="mapView" destination="ofY-gj-toO" id="dad-xe-Svo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVF-JO-C7u" userLabel="First Responder" sceneMemberID="firstResponder"/>

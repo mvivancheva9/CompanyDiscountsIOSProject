@@ -21,6 +21,7 @@
 		0062B1761C627C510083B24E /* AllBusinessesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1751C627C510083B24E /* AllBusinessesCollectionViewController.m */; };
 		0062B1791C63744F0083B24E /* AllBusinessesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1781C63744F0083B24E /* AllBusinessesCollectionViewCell.m */; };
 		0062B17C1C639A160083B24E /* BusinessDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B17B1C639A160083B24E /* BusinessDetailsViewController.m */; };
+		0062B17E1C63D2530083B24E /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0062B17D1C63D2530083B24E /* default.gpx */; };
 		0098F1DE1C60CA97008CEF76 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 0098F1DD1C60CA97008CEF76 /* Business.m */; };
 		0098F22B1C611D86008CEF76 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22A1C611D86008CEF76 /* Bolts.framework */; };
 		0098F22D1C611DA7008CEF76 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22C1C611DA7008CEF76 /* Parse.framework */; };
@@ -63,6 +64,7 @@
 		0062B1781C63744F0083B24E /* AllBusinessesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllBusinessesCollectionViewCell.m; sourceTree = "<group>"; };
 		0062B17A1C639A160083B24E /* BusinessDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessDetailsViewController.h; sourceTree = "<group>"; };
 		0062B17B1C639A160083B24E /* BusinessDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessDetailsViewController.m; sourceTree = "<group>"; };
+		0062B17D1C63D2530083B24E /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = default.gpx; path = CompanyDiscounts/default.gpx; sourceTree = "<group>"; };
 		0098F1DC1C60CA97008CEF76 /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
 		0098F1DD1C60CA97008CEF76 /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
 		0098F22A1C611D86008CEF76 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = CompanyDiscounts/Bolts.framework; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		001A68041C5F8DF60083D416 = {
 			isa = PBXGroup;
 			children = (
+				0062B17D1C63D2530083B24E /* default.gpx */,
 				0062B16F1C6246090083B24E /* MapKit.framework */,
 				0098F23E1C611EAF008CEF76 /* libsqlite3.tbd */,
 				0098F23C1C611E9B008CEF76 /* libz.tbd */,
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				001A68231C5F8DF70083D416 /* LaunchScreen.storyboard in Resources */,
+				0062B17E1C63D2530083B24E /* default.gpx in Resources */,
 				001A68201C5F8DF70083D416 /* Assets.xcassets in Resources */,
 				001A681B1C5F8DF70083D416 /* Main.storyboard in Resources */,
 			);
