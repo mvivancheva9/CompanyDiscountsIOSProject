@@ -20,6 +20,7 @@
 		0062B1731C624C630083B24E /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1721C624C630083B24E /* MapPin.m */; };
 		0062B1761C627C510083B24E /* AllBusinessesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1751C627C510083B24E /* AllBusinessesCollectionViewController.m */; };
 		0062B1791C63744F0083B24E /* AllBusinessesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1781C63744F0083B24E /* AllBusinessesCollectionViewCell.m */; };
+		0062B17C1C639A160083B24E /* BusinessDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B17B1C639A160083B24E /* BusinessDetailsViewController.m */; };
 		0098F1DE1C60CA97008CEF76 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 0098F1DD1C60CA97008CEF76 /* Business.m */; };
 		0098F22B1C611D86008CEF76 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22A1C611D86008CEF76 /* Bolts.framework */; };
 		0098F22D1C611DA7008CEF76 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22C1C611DA7008CEF76 /* Parse.framework */; };
@@ -60,6 +61,8 @@
 		0062B1751C627C510083B24E /* AllBusinessesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllBusinessesCollectionViewController.m; sourceTree = "<group>"; };
 		0062B1771C63744F0083B24E /* AllBusinessesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllBusinessesCollectionViewCell.h; sourceTree = "<group>"; };
 		0062B1781C63744F0083B24E /* AllBusinessesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllBusinessesCollectionViewCell.m; sourceTree = "<group>"; };
+		0062B17A1C639A160083B24E /* BusinessDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessDetailsViewController.h; sourceTree = "<group>"; };
+		0062B17B1C639A160083B24E /* BusinessDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessDetailsViewController.m; sourceTree = "<group>"; };
 		0098F1DC1C60CA97008CEF76 /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
 		0098F1DD1C60CA97008CEF76 /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
 		0098F22A1C611D86008CEF76 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = CompanyDiscounts/Bolts.framework; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				0062B1751C627C510083B24E /* AllBusinessesCollectionViewController.m */,
 				0062B1771C63744F0083B24E /* AllBusinessesCollectionViewCell.h */,
 				0062B1781C63744F0083B24E /* AllBusinessesCollectionViewCell.m */,
+				0062B17A1C639A160083B24E /* BusinessDetailsViewController.h */,
+				0062B17B1C639A160083B24E /* BusinessDetailsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				0062B1731C624C630083B24E /* MapPin.m in Sources */,
 				001A681E1C5F8DF70083D416 /* CompanyDiscounts.xcdatamodeld in Sources */,
 				0062B1791C63744F0083B24E /* AllBusinessesCollectionViewCell.m in Sources */,
+				0062B17C1C639A160083B24E /* BusinessDetailsViewController.m in Sources */,
 				0062B16B1C621D3F0083B24E /* Location.m in Sources */,
 				001A68181C5F8DF70083D416 /* ViewController.m in Sources */,
 				001A68151C5F8DF70083D416 /* AppDelegate.m in Sources */,

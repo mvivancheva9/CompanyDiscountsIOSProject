@@ -34,7 +34,7 @@
 }
 
 - (IBAction)viewMyLocationButton:(id)sender {
-    BOOL enabled = [CLLocationManager locationServicesEnabled];
+    
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     
     if(status == kCLAuthorizationStatusAuthorizedAlways){

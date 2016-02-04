@@ -10,8 +10,9 @@
 #import <Parse/Parse.h>
 #import "AllBusinessesCollectionViewCell.h"
 #import "Business.h"
+#import "BusinessDetailsViewController.h"
 
-@interface AllBusinessesCollectionViewController ()
+@interface AllBusinessesCollectionViewController () <UICollectionViewDelegate>
 
 @end
 
@@ -19,11 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.collectionView setDelegate:self];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Business"];
     NSArray* businessesData = [query findObjects];
-    
-    self.simpleData = [[NSArray alloc]initWithObjects:@"Ala",@"Bala", nil ] ;
     
     self.businesses = businessesData;    
 }
@@ -60,12 +60,23 @@
     
     AllBusinessesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    Business *currentBusiness = (Business *)[self.businesses objectAtIndex:indexPath.row];
+    Business *currentBusiness = [self.businesses objectAtIndex:indexPath.row];
     
     cell.businessNameLabel.text = currentBusiness.name;
-    
-    
+    //cell.userInteractionEnabled = YES;
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    Business *business = [self.businesses objectAtIndex:indexPath.row];
+    NSString *storyBoardId = @"BusinessDetailsScene";
+    
+    BusinessDetailsViewController *detailsVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+    
+    detailsVC.business = business;
+
+    [self.navigationController pushViewController:detailsVC animated:YES];
 }
 
 #pragma mark <UICollectionViewDelegate>
@@ -77,12 +88,11 @@
 }
 */
 
-/*
+
 // Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
-*/
 
 /*
 // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
