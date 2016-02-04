@@ -8,6 +8,8 @@
 
 #import "AllBusinessesCollectionViewController.h"
 #import <Parse/Parse.h>
+#import "AllBusinessesCollectionViewCell.h"
+#import "Business.h"
 
 @interface AllBusinessesCollectionViewController ()
 
@@ -15,21 +17,15 @@
 
 @implementation AllBusinessesCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Business"];
     NSArray* businessesData = [query findObjects];
     
-    self.businesses = businessesData;
+    self.simpleData = [[NSArray alloc]initWithObjects:@"Ala",@"Bala", nil ] ;
     
-    
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+    self.businesses = businessesData;    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,14 +56,17 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"Cell";
+    NSString *identifier = @"Cell";
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    AllBusinessesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    UILabel *businessNameLabel = (UILabel *)[cell viewWithTag:100];
-    businessNameLabel.text = [self.businesses objectAtIndex:indexPath.row];
+    Business *currentBusiness = (Business *)[self.businesses objectAtIndex:indexPath.row];
     
-    return cell;}
+    cell.businessNameLabel.text = currentBusiness.name;
+    
+    
+    return cell;
+}
 
 #pragma mark <UICollectionViewDelegate>
 

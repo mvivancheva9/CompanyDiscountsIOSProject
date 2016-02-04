@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) NSArray *businesses;
 
+@property (strong, nonatomic) NSArray *simpleData;
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+
 @end
