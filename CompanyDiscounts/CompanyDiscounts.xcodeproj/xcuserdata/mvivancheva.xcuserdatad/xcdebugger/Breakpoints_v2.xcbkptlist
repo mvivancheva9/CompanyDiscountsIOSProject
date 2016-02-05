@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CompanyDiscounts/UserViewController.m"
-            timestampString = "476381948.049368"
+            timestampString = "476382601.093312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "-login:"
             landmarkType = "5">
             <Locations>
@@ -90,22 +90,22 @@
                   moduleName = "CompanyDiscounts"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mvivancheva/Desktop/IOS%20project/CompanyDiscountsIOSProject/CompanyDiscounts/CompanyDiscounts/UserViewController.m"
-                  timestampString = "476382213.663251"
+                  timestampString = "476384752.494893"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "561">
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "769">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_33"
+                  symbolName = "__copy_helper_block_50"
                   moduleName = "CompanyDiscounts"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mvivancheva/Desktop/IOS%20project/CompanyDiscountsIOSProject/CompanyDiscounts/CompanyDiscounts/UserViewController.m"
-                  timestampString = "476382213.664116"
+                  timestampString = "476384752.495405"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -116,11 +116,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_34"
+                  symbolName = "__destroy_helper_block_51"
                   moduleName = "CompanyDiscounts"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mvivancheva/Desktop/IOS%20project/CompanyDiscountsIOSProject/CompanyDiscounts/CompanyDiscounts/UserViewController.m"
-                  timestampString = "476382213.664886"
+                  timestampString = "476384752.495914"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -137,11 +137,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CompanyDiscounts/UserViewController.m"
-            timestampString = "476381660.650485"
+            timestampString = "476382601.093312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "-login:"
             landmarkType = "5">
          </BreakpointContent>
@@ -153,12 +153,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CompanyDiscounts/UserViewController.m"
-            timestampString = "476381948.049368"
+            timestampString = "476382601.093312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "-login:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDiscounts/AllBusinessesCollectionViewController.m"
+            timestampString = "476384751.456964"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -54,8 +54,23 @@
                         [mapView addAnnotation:annotation];
                     }
                 } else {
-                    //TODO: Add Alert
-                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                    UIAlertController * alert=   [UIAlertController
+                                                  alertControllerWithTitle:@"Failed Loading"
+                                                  message:[NSString stringWithFormat: @"Failed loading location"]
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction* ok = [UIAlertAction
+                                         actionWithTitle:@"OK"
+                                         style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction * action)
+                                         {
+                                             [alert dismissViewControllerAnimated:YES completion:nil];
+                                             
+                                         }];
+                    
+                    [alert addAction:ok];
+                    
+                    [self presentViewController:alert animated:YES completion:nil];
                 }
             }];
             
@@ -88,7 +103,23 @@
 - (IBAction)getDirections:(id)sender{
     
     if(self.tappedCoord.latitude == 0 && self.tappedCoord.longitude == 0){
-        //TODO Alert
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Failed Loading"
+                                      message:[NSString stringWithFormat: @"Failed to get directions"]
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }else{
         float pinedLatitude = self.tappedCoord.latitude;
         float pinedLongitude = self.tappedCoord.longitude;

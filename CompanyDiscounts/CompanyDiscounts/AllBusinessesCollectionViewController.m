@@ -18,14 +18,41 @@
 
 @implementation AllBusinessesCollectionViewController
 
+-(void)viewDidAppear:(BOOL)animated{
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.collectionView setDelegate:self];
  
     PFQuery *query = [PFQuery queryWithClassName:@"Business"];
-    NSArray* businessesData = [query findObjects];
-    
-    self.businesses = businessesData;    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *businessData, NSError *error) {
+        if (!error) {
+            self.businesses = businessData;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.collectionView reloadData];
+            });
+        } else {
+            UIAlertController * alert=   [UIAlertController
+                                          alertControllerWithTitle:@"Failed"
+                                          message:[NSString stringWithFormat: @"Failed Loading Businesses"]
+                                          preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* ok = [UIAlertAction
+                                 actionWithTitle:@"OK"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+            
+            [alert addAction:ok];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

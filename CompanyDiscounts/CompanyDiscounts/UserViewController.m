@@ -8,6 +8,7 @@
 
 #import "UserViewController.h"
 #import "User.h"
+#import "AllBusinessesCollectionViewController.h"
 
 @interface UserViewController ()
 
@@ -27,10 +28,17 @@
 }
 
 -(IBAction)login:(id)sender{
-    [PFUser logInWithUsernameInBackground:self.usernameInput.text password:self.passwordInput.text
+    
+    User *user = [User withUsername:self.usernameInput.text andWithPassword:self.passwordInput.text];
+    
+    [PFUser logInWithUsernameInBackground:user.username password:user.password
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
-                                            int n = 5;
+                                            NSString *storyBoardId = @"AllBusinessesScene";
+                                            
+                                            AllBusinessesCollectionViewController *allBusinessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+                                            
+                                            [self.navigationController pushViewController:allBusinessesVC animated:YES];
                                         } else {
                                             UIAlertController * alert=   [UIAlertController
                                                                           alertControllerWithTitle:@"Verification Failed"
