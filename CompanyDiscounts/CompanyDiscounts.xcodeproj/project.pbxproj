@@ -22,6 +22,8 @@
 		0062B1791C63744F0083B24E /* AllBusinessesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1781C63744F0083B24E /* AllBusinessesCollectionViewCell.m */; };
 		0062B17C1C639A160083B24E /* BusinessDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B17B1C639A160083B24E /* BusinessDetailsViewController.m */; };
 		0062B17E1C63D2530083B24E /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0062B17D1C63D2530083B24E /* default.gpx */; };
+		0062B1811C64F6A70083B24E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1801C64F6A70083B24E /* User.m */; };
+		0062B1841C64F8F80083B24E /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1831C64F8F80083B24E /* UserViewController.m */; };
 		0098F1DE1C60CA97008CEF76 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 0098F1DD1C60CA97008CEF76 /* Business.m */; };
 		0098F22B1C611D86008CEF76 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22A1C611D86008CEF76 /* Bolts.framework */; };
 		0098F22D1C611DA7008CEF76 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22C1C611DA7008CEF76 /* Parse.framework */; };
@@ -65,6 +67,10 @@
 		0062B17A1C639A160083B24E /* BusinessDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessDetailsViewController.h; sourceTree = "<group>"; };
 		0062B17B1C639A160083B24E /* BusinessDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessDetailsViewController.m; sourceTree = "<group>"; };
 		0062B17D1C63D2530083B24E /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = default.gpx; path = CompanyDiscounts/default.gpx; sourceTree = "<group>"; };
+		0062B17F1C64F6A70083B24E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		0062B1801C64F6A70083B24E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		0062B1821C64F8F80083B24E /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		0062B1831C64F8F80083B24E /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		0098F1DC1C60CA97008CEF76 /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
 		0098F1DD1C60CA97008CEF76 /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
 		0098F22A1C611D86008CEF76 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = CompanyDiscounts/Bolts.framework; sourceTree = "<group>"; };
@@ -176,6 +182,8 @@
 				0062B1781C63744F0083B24E /* AllBusinessesCollectionViewCell.m */,
 				0062B17A1C639A160083B24E /* BusinessDetailsViewController.h */,
 				0062B17B1C639A160083B24E /* BusinessDetailsViewController.m */,
+				0062B1821C64F8F80083B24E /* UserViewController.h */,
+				0062B1831C64F8F80083B24E /* UserViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -189,6 +197,8 @@
 				0062B16A1C621D3F0083B24E /* Location.m */,
 				0062B1711C624C630083B24E /* MapPin.h */,
 				0062B1721C624C630083B24E /* MapPin.m */,
+				0062B17F1C64F6A70083B24E /* User.h */,
+				0062B1801C64F6A70083B24E /* User.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -269,12 +279,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0062B1811C64F6A70083B24E /* User.m in Sources */,
 				0062B1731C624C630083B24E /* MapPin.m in Sources */,
 				001A681E1C5F8DF70083D416 /* CompanyDiscounts.xcdatamodeld in Sources */,
 				0062B1791C63744F0083B24E /* AllBusinessesCollectionViewCell.m in Sources */,
 				0062B17C1C639A160083B24E /* BusinessDetailsViewController.m in Sources */,
 				0062B16B1C621D3F0083B24E /* Location.m in Sources */,
 				001A68181C5F8DF70083D416 /* ViewController.m in Sources */,
+				0062B1841C64F8F80083B24E /* UserViewController.m in Sources */,
 				001A68151C5F8DF70083D416 /* AppDelegate.m in Sources */,
 				0098F1DE1C60CA97008CEF76 /* Business.m in Sources */,
 				0062B1761C627C510083B24E /* AllBusinessesCollectionViewController.m in Sources */,

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController <CLLocationManagerDelegate>
+@interface ViewController : UIViewController
+
+-(IBAction)goToEmployeeView:(id)sender;
+
+-(IBAction)goToBusinessView:(id)sender;
 
 @end
 

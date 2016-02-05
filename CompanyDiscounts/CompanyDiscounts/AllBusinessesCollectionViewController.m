@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.collectionView setDelegate:self];
-    
+ 
     PFQuery *query = [PFQuery queryWithClassName:@"Business"];
     NSArray* businessesData = [query findObjects];
     

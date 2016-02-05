@@ -8,24 +8,21 @@
 
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
-
+#import "AddBusinessViewController.h"
+#import "UserViewController.h"
+#import <Parse/Parse.h>
+#import "AllBusinessesCollectionViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *myLocationLabel;
-
-@property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) NSString *locationAsString;
-
-@property BOOL locationHasBennDetected;
-
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Company Discounts";
     // Do any additional setup after loading the view, typically from a nib.
-    self.locationManager = [[CLLocationManager alloc] init];
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,75 +30,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)viewMyLocationButton:(id)sender {
+-(IBAction)goToEmployeeView:(id)sender{
     
-    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     
-    if(status == kCLAuthorizationStatusAuthorizedAlways){
-        NSLog(@"%d",status);
-    }
-    if(status != kCLAuthorizationStatusDenied && status != kCLAuthorizationStatusRestricted){
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        NSString *storyBoardId = @"AllBusinessesScene";
         
-        [self.locationManager requestWhenInUseAuthorization];
-        [self.locationManager requestAlwaysAuthorization];
+        AllBusinessesCollectionViewController *allBusinessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
         
-        self.locationManager.activityType = CLActivityTypeOther;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-        self.locationManager.delegate = self;
-        self.locationHasBennDetected = NO;
-        [self.locationManager startUpdatingLocation];
+        [self.navigationController pushViewController:allBusinessesVC animated:YES];
+    } else {
+        NSString *storyBoardId = @"UserScene";
         
+        UserViewController *userVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+        
+        [self.navigationController pushViewController:userVC animated:YES];
     }
 }
 
-- (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+-(IBAction)goToBusinessView:(id)sender{
     
-    CLLocation *newLocation;
+    NSString *storyBoardId = @"AddBusinessScene";
     
-    if([locations count] == 0){
-        return;
-    }
+    AddBusinessViewController *addBusinessVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
     
-    newLocation = [locations objectAtIndex:[locations count] - 1];
-    
-    //check for cashed location
-    
-    NSTimeInterval locationAge = -[newLocation.timestamp timeIntervalSinceNow];
-    
-    if(locationAge > 5){
-        return;
-    }
-    
-    //horizontal accuracy should not be less than 0
-    if(newLocation.horizontalAccuracy < 0){
-        return;
-    }
-    
-    NSLog(@"latitude %+.6f, longitude %+.6f\n",
-          newLocation.coordinate.latitude,
-          newLocation.coordinate.longitude);
-    
-    
-    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
-    
-    [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        
-        if([placemarks count] > 0)
-        {
-            
-        CLPlacemark *placemark= [placemarks objectAtIndex:0];
-        
-        self.locationAsString = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
-                                        placemark.subThoroughfare,
-                                        placemark.thoroughfare,
-                                        placemark.postalCode,
-                                        placemark.locality,
-                                        placemark.administrativeArea,
-                                        placemark.country];
-            
-            self.myLocationLabel.text = self.locationAsString;
-        }
-    }];
+    [self.navigationController pushViewController:addBusinessVC animated:YES];
 }
-
 @end
