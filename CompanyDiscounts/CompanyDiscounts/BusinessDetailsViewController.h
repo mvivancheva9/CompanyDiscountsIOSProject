@@ -11,7 +11,7 @@
 #import "Location.h"
 #import <MapKit/MapKit.h>
 
-@interface BusinessDetailsViewController : ViewController{
+@interface BusinessDetailsViewController : ViewController <MKMapViewDelegate> {
     MKMapView *mapView;
 }
 

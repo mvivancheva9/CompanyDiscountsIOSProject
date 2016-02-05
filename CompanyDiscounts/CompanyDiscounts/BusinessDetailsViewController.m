@@ -10,9 +10,9 @@
 #import <Parse/Parse.h>
 #import "MapPin.h"
 #import "Location.h"
-//@import MapKit;
+@import MapKit;
 
-@interface BusinessDetailsViewController () <MKMapViewDelegate>
+@interface BusinessDetailsViewController () 
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    mapView.delegate=self;
     self.locationManager = [[CLLocationManager alloc] init];
     // Do any additional setup after loading the view.
     
@@ -60,8 +61,6 @@
             
         }
     }];
-
-    
 }
 
 -(IBAction)GetLocation:(id)sender{
@@ -88,17 +87,21 @@
 
 - (IBAction)getDirections:(id)sender{
     
+    if(self.tappedCoord.latitude == 0 && self.tappedCoord.longitude == 0){
+        //TODO Alert
+    }else{
+        float pinedLatitude = self.tappedCoord.latitude;
+        float pinedLongitude = self.tappedCoord.longitude;
+        NSString *urlString = [NSString stringWithFormat:@"http://maps.apple.com/maps?daddr=%f,%f",pinedLatitude,pinedLongitude];
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+    }
     
-    NSString *urlString = @"http://maps.apple.com/maps?daddr=";
-    
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
 }
 
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
     MKPointAnnotation *annotation=(MKPointAnnotation*)view.annotation;
     self.tappedCoord = annotation.coordinate;
-    
 }
 
 - (void)didReceiveMemoryWarning {
