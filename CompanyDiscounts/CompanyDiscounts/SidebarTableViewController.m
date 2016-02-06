@@ -10,6 +10,7 @@
 #import "AllBusinessesCollectionViewController.h"
 #import <Parse/Parse.h>
 #import "ViewController.h"
+#import "SWRevealViewController.h"
 
 @interface SidebarTableViewController ()
 
@@ -57,7 +58,14 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row == 2){
+    
+    if(indexPath.row == 1){
+        NSString *storyBoardId = @"PreUserScene";
+        
+        SWRevealViewController *allBusinessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+        
+        [self.navigationController pushViewController:allBusinessesVC animated:YES];
+    }else if(indexPath.row == 2){
         NSString *storyBoardId = @"AllBusinessesScene";
         
         AllBusinessesCollectionViewController *businessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];

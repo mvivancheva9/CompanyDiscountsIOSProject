@@ -10,6 +10,7 @@
 #import "User.h"
 #import "AllBusinessesCollectionViewController.h"
 #import "SWRevealViewController.h"
+#import "AppDelegate.h"
 
 @interface UserViewController ()
 
@@ -35,11 +36,27 @@
     [PFUser logInWithUsernameInBackground:user.username password:user.password
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
+                                            AppDelegate *appDelegate = [[AppDelegate alloc] init];
+                                            NSString *username = user.username;
+                                            NSManagedObjectContext *context =
+                                            [appDelegate managedObjectContext];
+                                            
+                                            NSManagedObject *newUser;
+                                            newUser = [NSEntityDescription
+                                                       insertNewObjectForEntityForName:@"User"
+                                                       inManagedObjectContext:context];
+                                            [newUser setValue: username forKey:@"username"];
+                                            
+//                                            NSError *error;
+//                                            if ([context save:&error]) {
+//                                                NSLog(@"User saved");
+//                                            }else{
+//                                                NSLog(@"User not saved");
+//                                            };
+
                                             NSString *storyBoardId = @"PreUserScene";
                                             
                                             SWRevealViewController *allBusinessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
-                                            
-                                            //allBusinessesVC.navigationItem.hidesBackButton = YES;
                                             
                                             [self.navigationController pushViewController:allBusinessesVC animated:YES];
                                         } else {

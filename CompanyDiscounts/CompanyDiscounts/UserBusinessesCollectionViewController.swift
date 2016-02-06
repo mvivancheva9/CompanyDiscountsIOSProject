@@ -6,19 +6,28 @@
 //  Copyright © 2016 Telerik Academy. All rights reserved.
 //
 
-import UIKit;
+import UIKit
+import CoreData
+import Parse
 
 private let reuseIdentifier = "Cell"
 
 class UserBusinessesCollectionViewController: UICollectionViewController {
 
+    var businesses = [NSManagedObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "User Profile"
+        
+//        let btnGoToSidebar = UIBarButtonItem(barButtonSystemItem: .Add, target: self.revealViewController(), action: "revealToggle:")
+//        
+//        self.navigationItem.leftBarButtonItem = btnGoToSidebar
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background3.png")!);
         
-        var revealViewController = SWRevealViewController();
-        revealViewController = self.revealViewController();
-        self.view!.addGestureRecognizer(self.revealViewController().panGestureRecognizer());
+        let revealViewController = self.revealViewController();
+        self.view!.addGestureRecognizer(revealViewController.panGestureRecognizer());
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -27,6 +36,22 @@ class UserBusinessesCollectionViewController: UICollectionViewController {
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let fetchRequest = NSFetchRequest(entityName: "Business")
+        
+        do {
+            let results = try self.managedContext.executeFetchRequest(fetchRequest)
+            self.businesses = results as! [NSManagedObject]
+            self.collectionView!.reloadData()
+        }
+        catch let err as NSError {
+            print("Error: \(err)")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,13 +73,22 @@ class UserBusinessesCollectionViewController: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            let username = currentUser!.username
+            return username.mutableSetValueForKey("businesses").count
+        } else {
+            return 0
+        }
+
+        
+        
+        
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -64,6 +98,11 @@ class UserBusinessesCollectionViewController: UICollectionViewController {
     
         return cell
     }
+    
+    lazy var managedContext: NSManagedObjectContext = {
+        let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        return managedContext;
+    }()
 
     // MARK: UICollectionViewDelegate
 

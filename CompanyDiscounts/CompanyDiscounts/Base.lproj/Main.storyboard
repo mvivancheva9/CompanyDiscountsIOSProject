@@ -590,7 +590,7 @@
             </objects>
             <point key="canvasLocation" x="6513" y="877.5"/>
         </scene>
-        <!--User Businesses Collection View Controller-->
+        <!--Title-->
         <scene sceneID="HcV-dX-wtX">
             <objects>
                 <collectionViewController id="KfC-Aa-r6e" customClass="UserBusinessesCollectionViewController" customModule="CompanyDiscounts" customModuleProvider="target" sceneMemberID="viewController">
@@ -657,7 +657,9 @@
                             <outlet property="delegate" destination="KfC-Aa-r6e" id="adQ-Rp-QHP"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="vvE-hR-AdJ"/>
+                    <navigationItem key="navigationItem" title="Title" id="jeK-zr-eFV">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="Blm-k6-H5x"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijw-gz-erR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -705,7 +707,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rbF-Th-azH">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-3R-TaV">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>

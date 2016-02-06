@@ -12,6 +12,8 @@
 #import "Business.h"
 #import "BusinessDetailsViewController.h"
 #import "SWRevealViewController.h"
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
 
 @interface AllBusinessesCollectionViewController () <UICollectionViewDelegate>
 
@@ -26,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.collectionView setDelegate:self];
+    self.currentUser = [PFUser currentUser];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3.png"]];
     
     SWRevealViewController *revealViewController = self.revealViewController;
@@ -104,13 +107,59 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     Business *business = [self.businesses objectAtIndex:indexPath.row];
-    NSString *storyBoardId = @"BusinessDetailsScene";
     
-    BusinessDetailsViewController *detailsVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Options"
+                                  message:[NSString stringWithFormat: @"Choose what to do with this business discounts"]
+                                  preferredStyle:UIAlertControllerStyleAlert];
     
-    detailsVC.business = business;
-
-    [self.navigationController pushViewController:detailsVC animated:YES];
+    UIAlertAction* goToMaps = [UIAlertAction
+                         actionWithTitle:@"Go To Maps"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             NSString *storyBoardId = @"BusinessDetailsScene";
+                             
+                             BusinessDetailsViewController *detailsVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+                             
+                             detailsVC.business = business;
+                             
+                             [self.navigationController pushViewController:detailsVC animated:YES];
+                             
+                         }];
+    UIAlertAction* addToMyList = [UIAlertAction
+                               actionWithTitle:@"Add To My List"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action)
+                               {
+                                   AppDelegate *appDelegate = [[AppDelegate alloc] init];
+                                   
+                                   NSString *businessName = business.name;
+                                   NSString *username = self.currentUser.username;
+                                   NSManagedObjectContext *context =
+                                   [appDelegate managedObjectContext];
+                                   
+                        
+                                   NSManagedObject *newBusiness;
+                                   newBusiness = [NSEntityDescription
+                                              insertNewObjectForEntityForName:@"Business"
+                                              inManagedObjectContext:context];
+                                   [newBusiness setValue: businessName forKey:@"name"];
+                                   
+//                                   if ([context save:&error]) {
+//                                       NSLog(@"Business saved");
+//                                   }else{
+//                                       NSLog(@"Business not saved");
+//                                   };
+                               }];
+    
+    
+    [alert addAction:goToMaps];
+    [alert addAction:addToMyList];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
 }
 
 #pragma mark <UICollectionViewDelegate>
