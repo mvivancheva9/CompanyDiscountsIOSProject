@@ -12,6 +12,4 @@
 
 @property (strong, nonatomic) NSArray *businesses;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
-
 @end

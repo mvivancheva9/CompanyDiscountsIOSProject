@@ -7,6 +7,9 @@
 //
 
 #import "SidebarTableViewController.h"
+#import "AllBusinessesCollectionViewController.h"
+#import <Parse/Parse.h>
+#import "ViewController.h"
 
 @interface SidebarTableViewController ()
 
@@ -16,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.options = [[NSArray alloc] initWithObjects:@"", @"Your Discounts", @"All Discounts", @"Logout", nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -32,24 +37,46 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return self.options.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSString *identifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: identifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = [self.options objectAtIndex:indexPath.row];
     
     return cell;
 }
-*/
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row == 2){
+        NSString *storyBoardId = @"AllBusinessesScene";
+        
+        AllBusinessesCollectionViewController *businessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+        
+        [self.navigationController pushViewController:businessesVC animated:YES];
+    }else if (indexPath.row == 3){
+        [PFUser logOut];
+        PFUser *currentUser = [PFUser currentUser];
+        
+        NSString *storyBoardId = @"MainViewScene";
+        
+        ViewController *mainViewVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+        
+        [self.navigationController pushViewController:mainViewVC animated:YES];
+        
+        
+    }
+    
+}
 
 /*
 // Override to support conditional editing of the table view.

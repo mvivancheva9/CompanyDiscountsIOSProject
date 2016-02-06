@@ -9,6 +9,7 @@
 #import "UserViewController.h"
 #import "User.h"
 #import "AllBusinessesCollectionViewController.h"
+#import "SWRevealViewController.h"
 
 @interface UserViewController ()
 
@@ -34,9 +35,11 @@
     [PFUser logInWithUsernameInBackground:user.username password:user.password
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
-                                            NSString *storyBoardId = @"AllBusinessesScene";
+                                            NSString *storyBoardId = @"PreUserScene";
                                             
-                                            AllBusinessesCollectionViewController *allBusinessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+                                            SWRevealViewController *allBusinessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+                                            
+                                            //allBusinessesVC.navigationItem.hidesBackButton = YES;
                                             
                                             [self.navigationController pushViewController:allBusinessesVC animated:YES];
                                         } else {

@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     mapView.delegate=self;
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3.png"]];
     self.locationManager = [[CLLocationManager alloc] init];
     // Do any additional setup after loading the view.
     

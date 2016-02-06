@@ -10,4 +10,6 @@
 
 @interface SidebarTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray *options;
+
 @end
