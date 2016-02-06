@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CompanyDiscounts/BusinessDetailsViewController.m"
-            timestampString = "476372453.454462"
+            timestampString = "476385404.744233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "-mapView:didSelectAnnotationView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CompanyDiscounts/BusinessDetailsViewController.m"
-            timestampString = "476372427.237049"
+            timestampString = "476385404.744233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "-getDirections:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,7 +90,7 @@
                   moduleName = "CompanyDiscounts"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mvivancheva/Desktop/IOS%20project/CompanyDiscountsIOSProject/CompanyDiscounts/CompanyDiscounts/UserViewController.m"
-                  timestampString = "476384752.494893"
+                  timestampString = "476451989.447651"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "61"
@@ -105,7 +105,7 @@
                   moduleName = "CompanyDiscounts"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mvivancheva/Desktop/IOS%20project/CompanyDiscountsIOSProject/CompanyDiscounts/CompanyDiscounts/UserViewController.m"
-                  timestampString = "476384752.495405"
+                  timestampString = "476451989.448087"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -120,7 +120,7 @@
                   moduleName = "CompanyDiscounts"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mvivancheva/Desktop/IOS%20project/CompanyDiscountsIOSProject/CompanyDiscounts/CompanyDiscounts/UserViewController.m"
-                  timestampString = "476384752.495914"
+                  timestampString = "476451989.448946"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -169,12 +169,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CompanyDiscounts/AllBusinessesCollectionViewController.m"
-            timestampString = "476384751.456964"
+            timestampString = "476451446.768026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "-collectionView:numberOfItemsInSection:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDiscounts/AllBusinessesCollectionViewController.m"
+            timestampString = "476451446.768026"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

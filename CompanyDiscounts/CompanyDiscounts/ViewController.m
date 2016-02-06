@@ -11,6 +11,7 @@
 #import "AddBusinessViewController.h"
 #import "UserViewController.h"
 #import <Parse/Parse.h>
+#import "SWRevealViewController.h"
 #import "AllBusinessesCollectionViewController.h"
 
 @interface ViewController ()
@@ -35,9 +36,11 @@
     
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
-        NSString *storyBoardId = @"AllBusinessesScene";
+        NSString *storyBoardId = @"PreUserScene";
         
-        AllBusinessesCollectionViewController *allBusinessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+        SWRevealViewController *allBusinessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+        
+        allBusinessesVC.navigationItem.hidesBackButton = YES;
         
         [self.navigationController pushViewController:allBusinessesVC animated:YES];
     } else {

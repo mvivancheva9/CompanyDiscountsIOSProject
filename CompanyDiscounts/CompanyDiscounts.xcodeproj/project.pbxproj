@@ -24,6 +24,8 @@
 		0062B17E1C63D2530083B24E /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0062B17D1C63D2530083B24E /* default.gpx */; };
 		0062B1811C64F6A70083B24E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1801C64F6A70083B24E /* User.m */; };
 		0062B1841C64F8F80083B24E /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B1831C64F8F80083B24E /* UserViewController.m */; };
+		0062B18D1C6607F20083B24E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B18C1C6607F20083B24E /* SWRevealViewController.m */; };
+		0062B1901C6609210083B24E /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B18F1C6609210083B24E /* SidebarTableViewController.m */; };
 		0098F1DE1C60CA97008CEF76 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 0098F1DD1C60CA97008CEF76 /* Business.m */; };
 		0098F22B1C611D86008CEF76 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22A1C611D86008CEF76 /* Bolts.framework */; };
 		0098F22D1C611DA7008CEF76 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098F22C1C611DA7008CEF76 /* Parse.framework */; };
@@ -71,6 +73,10 @@
 		0062B1801C64F6A70083B24E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0062B1821C64F8F80083B24E /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		0062B1831C64F8F80083B24E /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		0062B18B1C6607F20083B24E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../../../SWRevealViewController.h; sourceTree = "<group>"; };
+		0062B18C1C6607F20083B24E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../../../SWRevealViewController.m; sourceTree = "<group>"; };
+		0062B18E1C6609210083B24E /* SidebarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarTableViewController.h; sourceTree = "<group>"; };
+		0062B18F1C6609210083B24E /* SidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarTableViewController.m; sourceTree = "<group>"; };
 		0098F1DC1C60CA97008CEF76 /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
 		0098F1DD1C60CA97008CEF76 /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
 		0098F22A1C611D86008CEF76 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = CompanyDiscounts/Bolts.framework; sourceTree = "<group>"; };
@@ -170,6 +176,8 @@
 		001A682A1C5FD1BA0083D416 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0062B18B1C6607F20083B24E /* SWRevealViewController.h */,
+				0062B18C1C6607F20083B24E /* SWRevealViewController.m */,
 				001A68161C5F8DF70083D416 /* ViewController.h */,
 				001A68171C5F8DF70083D416 /* ViewController.m */,
 				00A503941C60BCCE00186492 /* AddBusinessViewController.h */,
@@ -184,6 +192,8 @@
 				0062B17B1C639A160083B24E /* BusinessDetailsViewController.m */,
 				0062B1821C64F8F80083B24E /* UserViewController.h */,
 				0062B1831C64F8F80083B24E /* UserViewController.m */,
+				0062B18E1C6609210083B24E /* SidebarTableViewController.h */,
+				0062B18F1C6609210083B24E /* SidebarTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -287,8 +297,10 @@
 				0062B16B1C621D3F0083B24E /* Location.m in Sources */,
 				001A68181C5F8DF70083D416 /* ViewController.m in Sources */,
 				0062B1841C64F8F80083B24E /* UserViewController.m in Sources */,
+				0062B1901C6609210083B24E /* SidebarTableViewController.m in Sources */,
 				001A68151C5F8DF70083D416 /* AppDelegate.m in Sources */,
 				0098F1DE1C60CA97008CEF76 /* Business.m in Sources */,
+				0062B18D1C6607F20083B24E /* SWRevealViewController.m in Sources */,
 				0062B1761C627C510083B24E /* AllBusinessesCollectionViewController.m in Sources */,
 				001A68121C5F8DF70083D416 /* main.m in Sources */,
 				00A503961C60BCCE00186492 /* AddBusinessViewController.m in Sources */,

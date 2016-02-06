@@ -11,6 +11,7 @@
 #import "AllBusinessesCollectionViewCell.h"
 #import "Business.h"
 #import "BusinessDetailsViewController.h"
+#import "SWRevealViewController.h"
 
 @interface AllBusinessesCollectionViewController () <UICollectionViewDelegate>
 
@@ -25,7 +26,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.collectionView setDelegate:self];
- 
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3.png"]];
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.barButton setTarget: self.revealViewController];
+        [self.barButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Business"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *businessData, NSError *error) {
         if (!error) {
@@ -59,7 +69,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 /*
 #pragma mark - Navigation
 

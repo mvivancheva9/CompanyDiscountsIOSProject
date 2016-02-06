@@ -14,7 +14,7 @@
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *password;
 
-+(NSString*) parseClassName;
++(NSString *) parseClassName;
 
 +(User *) withUsername:(NSString *)username
        andWithPassword:(NSString *)password;
