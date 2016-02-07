@@ -16,7 +16,10 @@
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) Business *business;
+@property (strong, nonatomic) NSString *businessId;
 
 -(IBAction)setMap: (id) sender;
+
+-(IBAction)manageBusiness:(id)sender;
 
 @end

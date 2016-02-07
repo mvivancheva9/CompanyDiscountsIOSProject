@@ -40,7 +40,7 @@
         
         SWRevealViewController *allBusinessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
         
-        allBusinessesVC.navigationItem.hidesBackButton = YES;
+        //allBusinessesVC.navigationItem.hidesBackButton = YES;
         
         [self.navigationController pushViewController:allBusinessesVC animated:YES];
     } else {

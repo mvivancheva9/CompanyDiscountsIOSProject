@@ -392,10 +392,21 @@
                                             </connections>
                                         </segmentedControl>
                                     </barButtonItem>
+                                    <barButtonItem systemItem="done" id="d6c-kh-TzJ">
+                                        <connections>
+                                            <action selector="manageBusiness:" destination="69u-AO-1mI" id="Hin-mB-h7D"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="756" width="400" height="44"/>
+                                </variation>
                             </toolbar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ScK-UC-v0r">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="46" width="360" height="694"/>
+                                </variation>
                             </mapView>
                         </subviews>
                         <constraints>
@@ -442,6 +453,8 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="ScK-UC-v0r" id="e0a-QF-uVk"/>
                     </connections>
@@ -449,6 +462,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cD-8d-aQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3546" y="273.75"/>
+        </scene>
+        <!--Manage Business Table View Controller-->
+        <scene sceneID="DcC-jj-kSz">
+            <objects>
+                <tableViewController storyboardIdentifier="ManageBusinessScene" id="Nba-E7-REb" customClass="ManageBusinessTableViewController" customModule="CompanyDiscounts" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vGN-de-8Bg">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Nbl-co-H4q">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nbl-co-H4q" id="hpU-fC-bSU">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Nba-E7-REb" id="dk7-Os-Qp2"/>
+                            <outlet property="delegate" destination="Nba-E7-REb" id="lzn-Tf-STn"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3aH-xb-vze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3546" y="-369.75"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="VIq-uW-C0d">
@@ -469,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUp-eY-mY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5806.5" y="143.25"/>
+            <point key="canvasLocation" x="4252.5" y="-111.75"/>
         </scene>
         <!--Sidebar Table View Controller-->
         <scene sceneID="J3w-bM-HHL">
@@ -497,7 +535,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycy-Kj-gAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6855" y="207"/>
+            <point key="canvasLocation" x="5469" y="-117"/>
         </scene>
         <!--All Businesses Collection View Controller-->
         <scene sceneID="uZX-YL-WMe">
@@ -592,7 +630,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeR-HF-fPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6513" y="877.5"/>
+            <point key="canvasLocation" x="5169" y="1501.5"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="eax-J6-Sw0">
@@ -776,7 +814,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bk-cS-JEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5151" y="883.5"/>
+            <point key="canvasLocation" x="2853" y="1012.5"/>
         </scene>
         <!--Business Details View Controller-->
         <scene sceneID="6su-Jk-WIo">
@@ -868,7 +906,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVF-JO-C7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7167" y="883.5"/>
+            <point key="canvasLocation" x="5919" y="1501.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SCg-Kt-Gto">
@@ -904,7 +942,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z8r-EM-l1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5823" y="883.5"/>
+            <point key="canvasLocation" x="4252.5" y="1492.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rUD-ie-0dy">
@@ -1102,7 +1140,7 @@
                     </connections>
                 </collectionView>
             </objects>
-            <point key="canvasLocation" x="4233" y="883.5"/>
+            <point key="canvasLocation" x="1935" y="988.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jrY-8H-lcf">
@@ -1120,7 +1158,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mbe-Z8-gpe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6261" y="1714.5"/>
+            <point key="canvasLocation" x="4252.5" y="760.5"/>
         </scene>
         <!--User Collection View Controller-->
         <scene sceneID="1W0-C5-LMY">
@@ -1180,7 +1218,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n79-7N-0iL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7167" y="1555.5"/>
+            <point key="canvasLocation" x="5169" y="766.5"/>
         </scene>
     </scenes>
     <resources>

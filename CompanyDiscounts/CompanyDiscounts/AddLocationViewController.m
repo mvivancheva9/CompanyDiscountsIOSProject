@@ -9,6 +9,8 @@
 #import "AddLocationViewController.h"
 #import "Location.h"
 #import "MapPin.h"
+#import "CompanyDiscounts-Swift.h"
+#import "AppDelegate.h"
 
 @interface AddLocationViewController ()
 
@@ -59,11 +61,11 @@
             //TODO: Fix this with alert
             NSLog(@"The getFirstObject request failed.");
         } else {
-            NSString *businessId = currentBusiness.objectId;
+            self.businessId = currentBusiness.objectId;
             
             PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
             
-            Location *location = [Location withGeoPoint:point andWithBusinessId: businessId];
+            Location *location = [Location withGeoPoint:point andWithBusinessId: self.businessId];
             
             [location saveInBackground];
         }
@@ -87,7 +89,32 @@
         default:
             break;
     }
-};
+}
+
+-(IBAction)manageBusiness:(id)sender{
+    NSString *storyBoardId = @"ManageBusinessScene";
+    
+    ManageBusinessTableViewController *manageBusinessVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+    
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Business"];
+    [query whereKey:@"name" equalTo:self.business.name];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *currentBusiness, NSError *error) {
+        if (!currentBusiness) {
+            //TODO: Fix this with alert
+            NSLog(@"The getFirstObject request failed.");
+        } else {
+            self.businessId = currentBusiness.objectId;
+            
+            appDelegate.data = self.businessId;
+            
+            [self.navigationController pushViewController:manageBusinessVC animated:YES];
+
+        }
+     }];
+    
+}
 
 /*
 #pragma mark - Navigation
