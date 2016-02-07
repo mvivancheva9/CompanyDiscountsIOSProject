@@ -146,11 +146,31 @@
                                               inManagedObjectContext:context];
                                    [newBusiness setValue: businessName forKey:@"name"];
                                    
-//                                   if ([context save:&error]) {
-//                                       NSLog(@"Business saved");
-//                                   }else{
-//                                       NSLog(@"Business not saved");
-//                                   };
+                                   NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"User"];
+                                   request.predicate = [NSPredicate predicateWithFormat:@"username like %@", username];
+                                   NSError *error = nil;
+                                   
+                                   NSArray *results = [context executeFetchRequest:request error:&error];
+                                   
+                                   NSLog(@"Count: %li", results.count);
+                                   
+                                   if (results.count == 1) {
+                                       NSSet* users= [NSSet setWithArray: results];
+                                       [newBusiness setValue: users forKey:@"businessToUser"];
+                                       if ([context save:&error]) {
+                                           NSLog(@"Business saved");
+                                           
+                                       }else{
+                                           NSLog(@"Business not saved");
+                                       };
+                                   }
+                                   NSString *storyBoardId = @"PreUserScene";
+                                   
+                                   SWRevealViewController *allBusinessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+                                   
+                                   allBusinessesVC.navigationItem.hidesBackButton = YES;
+                                   
+                                   [self.navigationController pushViewController:allBusinessesVC animated:YES];
                                }];
     
     
@@ -161,35 +181,4 @@
     
     
 }
-
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
-
 @end

@@ -11,10 +11,11 @@ import CoreData
 import Parse
 
 private let reuseIdentifier = "Cell"
+private let currentUser = PFUser.currentUser()!
 
 class UserBusinessesCollectionViewController: UICollectionViewController {
 
-    var businesses = [NSManagedObject]()
+    var user = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,25 +34,27 @@ class UserBusinessesCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+       
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let fetchRequest = NSFetchRequest(entityName: "Business")
+        let fetchRequest = NSFetchRequest(entityName: "User")
         
         do {
             let results = try self.managedContext.executeFetchRequest(fetchRequest)
-            self.businesses = results as! [NSManagedObject]
+            let username = currentUser.username!
+            let predicate = NSPredicate(format: "username like %@", username)
+            fetchRequest.predicate = predicate
+            self.user = results as! [NSManagedObject]
             self.collectionView!.reloadData()
+            
         }
         catch let err as NSError {
             print("Error: \(err)")
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,23 +81,24 @@ class UserBusinessesCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var currentUser = PFUser.currentUser()
-        if currentUser != nil {
-            let username = currentUser!.username
-            return username.mutableSetValueForKey("businesses").count
-        } else {
-            return 0
-        }
-
         
-        
-        
+        let currentUser = self.user[0]
+        return currentUser.mutableSetValueForKey("userToBusiness").count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        
+        let currentUser = self.user[0]
+        
+        let business = currentUser.mutableSetValueForKey("userToBusiness").allObjects[indexPath.row]
+        
+        let name = business.valueForKey("name") as! String;
     
-        // Configure the cell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! AllBusinessesCollectionViewCell
+        
+        if let label = cell.businessNameLabel{
+            label.text = "\(name)"
+        }
     
         return cell
     }

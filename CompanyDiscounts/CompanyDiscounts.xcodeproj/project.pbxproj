@@ -14,6 +14,7 @@
 		001A681E1C5F8DF70083D416 /* CompanyDiscounts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 001A681C1C5F8DF70083D416 /* CompanyDiscounts.xcdatamodeld */; };
 		001A68201C5F8DF70083D416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001A681F1C5F8DF70083D416 /* Assets.xcassets */; };
 		001A68231C5F8DF70083D416 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001A68211C5F8DF70083D416 /* LaunchScreen.storyboard */; };
+		00586DA51C678DBF0060D719 /* UserCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00586DA41C678DBF0060D719 /* UserCollectionViewController.m */; };
 		0062B16B1C621D3F0083B24E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B16A1C621D3F0083B24E /* Location.m */; };
 		0062B16E1C62332B0083B24E /* AddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062B16D1C62332B0083B24E /* AddLocationViewController.m */; };
 		0062B1701C6246090083B24E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0062B16F1C6246090083B24E /* MapKit.framework */; };
@@ -57,6 +58,8 @@
 		001A68221C5F8DF70083D416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001A68241C5F8DF70083D416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001A682B1C5FE26B0083D416 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		00586DA31C678DBF0060D719 /* UserCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCollectionViewController.h; sourceTree = "<group>"; };
+		00586DA41C678DBF0060D719 /* UserCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCollectionViewController.m; sourceTree = "<group>"; };
 		0062B1691C621D3F0083B24E /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		0062B16A1C621D3F0083B24E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		0062B16C1C62332B0083B24E /* AddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLocationViewController.h; sourceTree = "<group>"; };
@@ -203,6 +206,8 @@
 				0062B18F1C6609210083B24E /* SidebarTableViewController.m */,
 				0062B1941C663B3D0083B24E /* UserBusinessesCollectionViewController.swift */,
 				0062B1931C663B3D0083B24E /* CompanyDiscounts-Bridging-Header.h */,
+				00586DA31C678DBF0060D719 /* UserCollectionViewController.h */,
+				00586DA41C678DBF0060D719 /* UserCollectionViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0062B1811C64F6A70083B24E /* User.m in Sources */,
+				00586DA51C678DBF0060D719 /* UserCollectionViewController.m in Sources */,
 				0062B1731C624C630083B24E /* MapPin.m in Sources */,
 				001A681E1C5F8DF70083D416 /* CompanyDiscounts.xcdatamodeld in Sources */,
 				0062B1791C63744F0083B24E /* AllBusinessesCollectionViewCell.m in Sources */,

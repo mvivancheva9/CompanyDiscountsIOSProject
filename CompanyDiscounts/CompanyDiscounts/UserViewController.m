@@ -38,22 +38,30 @@
                                         if (user) {
                                             AppDelegate *appDelegate = [[AppDelegate alloc] init];
                                             NSString *username = user.username;
-                                            NSManagedObjectContext *context =
-                                            [appDelegate managedObjectContext];
+                                            NSManagedObjectContext *context =[appDelegate managedObjectContext];
+                                            NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"User"];
+                                            request.predicate = [NSPredicate predicateWithFormat:@"username like %@", username];
+                                            NSError *error = nil;
                                             
-                                            NSManagedObject *newUser;
-                                            newUser = [NSEntityDescription
-                                                       insertNewObjectForEntityForName:@"User"
-                                                       inManagedObjectContext:context];
-                                            [newUser setValue: username forKey:@"username"];
+                                            NSArray *results = [context executeFetchRequest:request error:&error];
                                             
-//                                            NSError *error;
-//                                            if ([context save:&error]) {
-//                                                NSLog(@"User saved");
-//                                            }else{
-//                                                NSLog(@"User not saved");
-//                                            };
+                                            NSLog(@"Count: %li", results.count);
 
+                                            if (results.count == 0) {
+                                                NSManagedObject *newUser;
+                                                newUser = [NSEntityDescription
+                                                           insertNewObjectForEntityForName:@"User"
+                                                           inManagedObjectContext:context];
+                                                [newUser setValue: username forKey:@"username"];
+                                                
+                                                if ([context save:&error]) {
+                                                    NSLog(@"User saved");
+                                                }else{
+                                                    NSLog(@"User not saved");
+                                                };
+                                            }
+                                            
+                                            
                                             NSString *storyBoardId = @"PreUserScene";
                                             
                                             SWRevealViewController *allBusinessesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
