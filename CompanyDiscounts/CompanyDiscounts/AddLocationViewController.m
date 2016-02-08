@@ -49,6 +49,7 @@
     MapPin *annotation = [[MapPin alloc] init];
     annotation.coordinate = touchMapCoordinate;
     annotation.title = self.business.name;
+    annotation.subTitle = self.business.discount;
     [self.mapView addAnnotation:annotation];
     
     float latitude = annotation.coordinate.latitude;

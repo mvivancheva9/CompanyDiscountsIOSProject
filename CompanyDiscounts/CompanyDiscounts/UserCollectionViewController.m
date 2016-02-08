@@ -98,7 +98,8 @@ static NSString * const reuseIdentifier = @"Cell";
                                    
     detailsVC.business = business;
                                    
-    [self.navigationController pushViewController:detailsVC animated:YES];
+    [self.navigationController pushViewController:detailsVC animated:YES];    
+    
 }
 
 @end

@@ -73,7 +73,6 @@
         [self.navigationController pushViewController:businessesVC animated:YES];
     }else if (indexPath.row == 3){
         [PFUser logOut];
-        PFUser *currentUser = [PFUser currentUser];
         
         NSString *storyBoardId = @"MainViewScene";
         

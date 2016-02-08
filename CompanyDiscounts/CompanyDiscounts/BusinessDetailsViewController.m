@@ -52,6 +52,7 @@
                         MapPin *annotation = [[MapPin alloc] init];
                         annotation.coordinate =  CLLocationCoordinate2DMake(latitude, longitude);
                         annotation.title = self.business.name;
+                        annotation.subTitle = self.business.discount;
                         [mapView addAnnotation:annotation];
                     }
                 } else {

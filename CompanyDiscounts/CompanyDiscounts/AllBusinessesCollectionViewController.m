@@ -99,7 +99,11 @@
     
     Business *currentBusiness = [self.businesses objectAtIndex:indexPath.row];
     
-    cell.businessNameLabel.text = currentBusiness.name;
+    NSString* name = currentBusiness.name;
+    
+    NSString *text = ([NSString stringWithFormat:@"%@ %@", name, currentBusiness.discount]);
+    
+    cell.businessNameLabel.text = text;
     //cell.userInteractionEnabled = YES;
     return cell;
 }

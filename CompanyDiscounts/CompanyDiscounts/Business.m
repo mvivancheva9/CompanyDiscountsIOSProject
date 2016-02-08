@@ -11,7 +11,7 @@
 @implementation Business
 
 @synthesize name = _name;
-@synthesize employeeLike = _employeeLike;
+@synthesize discount = _discount;
 
 +(void)load{
     [self registerSubclass];
@@ -25,21 +25,30 @@
     return self[@"name"];
 };
 
-//-(NSString *)employeeLike{
-//    return self[@"employeeLike"];
-//};
-//-(void)setEmployeeLike:(NSString *)employeeLike{
-//    self[@"employeeLike"] = employeeLike;
-//}
+-(NSString *)discount{
+    return self[@"discount"];
+};
+-(void)setDiscount:(NSString *)discount{
+    self[@"discount"] = discount;
+}
 
 -(void)setName:(NSString *)name{
     self[@"name"] = name;
 }
 
++(Business *) withName:(NSString *)name
+       andWithDiscount:(NSString *)discount{
+    Business *business = [Business object];
+    business.name = name;
+    business.discount = discount;
+   // business.employeeLike = @"true";
+    
+    return business;
+}
+
 +(Business *) withName:(NSString *)name{
     Business *business = [Business object];
     business.name = name;
-   // business.employeeLike = @"true";
     
     return business;
 }

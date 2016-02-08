@@ -93,11 +93,13 @@ class UserBusinessesCollectionViewController: UICollectionViewController {
         let business = currentUser.mutableSetValueForKey("userToBusiness").allObjects[indexPath.row]
         
         let name = business.valueForKey("name") as! String;
+        
+        let discount = business.valueForKey("discount") as! String;
     
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! AllBusinessesCollectionViewCell
         
         if let label = cell.businessNameLabel{
-            label.text = "\(name)"
+            label.text = name + discount
         }
     
         return cell

@@ -14,6 +14,7 @@
 
 @interface AddBusinessViewController () <UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *businessNameInput;
+@property (weak, nonatomic) IBOutlet UITextField *businessDiscountInput;
 - (IBAction)addBusinessBtnTapped:(id)sender;
 
 @end
@@ -46,7 +47,9 @@
     
     NSString *name = self.businessNameInput.text;
     
-    Business *business = [Business withName:name];
+    NSString *discount = self.businessDiscountInput.text;
+    
+    Business *business = [Business withName:name andWithDiscount:discount];
     
     [business saveInBackground];
     

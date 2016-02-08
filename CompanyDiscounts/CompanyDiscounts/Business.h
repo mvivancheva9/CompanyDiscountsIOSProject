@@ -12,9 +12,12 @@
 @interface Business : PFObject <PFSubclassing>
 
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *employeeLike;
+@property (strong, nonatomic) NSString *discount;
 
 +(NSString*) parseClassName;
+
++(Business *) withName:(NSString *)name
+       andWithDiscount:(NSString *)discount;
 
 +(Business *) withName:(NSString *)name;
 @end
