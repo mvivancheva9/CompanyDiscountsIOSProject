@@ -76,9 +76,14 @@ class ManageBusinessTableViewController: UITableViewController {
             var placeMark: CLPlacemark!
             placeMark = placemarks?[0]
             
-            let locationName = placeMark.addressDictionary!["Name"] as? String
-            let city = placeMark.addressDictionary!["City"] as? String
-            
+            var locationName = placeMark.addressDictionary!["Name"] as? String
+            if(locationName == nil){
+                locationName = "Some Location"
+            }
+            var city = placeMark.addressDictionary!["City"] as? String
+            if(city == nil){
+                city = "Some City"
+            }
             let address = city! + ", " + locationName!
             cell.textLabel?.text = address
             
