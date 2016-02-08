@@ -8,30 +8,38 @@
 
 import UIKit
 
+var locationCounts = 0
+
 class ManageBusinessTableViewController: UITableViewController {
-   
-    var locationCounts = 0
+    
+    var locationsCoordinates = [PFGeoPoint]()
+    var address = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background3.png")!)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         let businessId = (UIApplication.sharedApplication().delegate as! AppDelegate).data;
-        var query = PFQuery(className:"Location")
+        let query = PFQuery(className:"Location")
         query.whereKey("businessId", equalTo:businessId)
         query.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            (locations: [PFObject]?, error: NSError?) -> Void in
             
             if error == nil {
-                // The find succeeded.
-                self.locationCounts = objects!.count
-                print("Successfully retrieved \(objects!.count) scores.")
-                // Do something with the found objects
-                if let objects = objects {
-                    for object in objects {
-                        print(object.objectId)
-                    }
+                dispatch_async(dispatch_get_main_queue(), {() -> Void in
+                    self.tableView.reloadData()
+                })
+                locationCounts = locations!.count
+                for location in locations!{
+                    
+                    self.locationsCoordinates.append((location["point"]) as! PFGeoPoint)
                 }
             } else {
-                // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
@@ -40,31 +48,67 @@ class ManageBusinessTableViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         
-        return self.locationCounts
+        return locationCounts
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        cell.textLabel?.text = "dada"
-
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("ManageBusinessScene", forIndexPath: indexPath)
+        
+        let latitude = self.locationsCoordinates[indexPath.row].latitude
+        let longitude = self.locationsCoordinates[indexPath.row].longitude
+        
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            // Place details
+            var placeMark: CLPlacemark!
+            placeMark = placemarks?[0]
+            
+            let locationName = placeMark.addressDictionary!["Name"] as? String
+            let city = placeMark.addressDictionary!["City"] as? String
+            
+            let address = city! + ", " + locationName!
+            cell.textLabel?.text = address
+            
+            
+        })
         return cell
     }
-    
 
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if(editingStyle == .Delete) {
+            let location = self.locationsCoordinates[indexPath.row]
+            
+            let query = PFQuery(className:"Location")
+            query.whereKey("point", equalTo:location)
+            query.findObjectsInBackgroundWithBlock {
+                
+                (var locations: [PFObject]?, error: NSError?) -> Void in
+                
+                if error == nil {
+                    print(locations?.count)
+                    locations?.removeAll()
+                    self.locationsCoordinates.removeAtIndex(indexPath.row)
+                    locationCounts = locationCounts - 1
+                    self.tableView.reloadData()
+                } else {
+                    print("Error: \(error!) \(error!.userInfo)")
+                }
+            }
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

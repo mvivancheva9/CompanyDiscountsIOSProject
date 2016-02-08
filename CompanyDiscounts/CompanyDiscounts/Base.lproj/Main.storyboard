@@ -469,9 +469,9 @@
                 <tableViewController storyboardIdentifier="ManageBusinessScene" id="Nba-E7-REb" customClass="ManageBusinessTableViewController" customModule="CompanyDiscounts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vGN-de-8Bg">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.040870886330000002" green="0.96268774040000005" blue="1" alpha="0.083270474139999995" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Nbl-co-H4q">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ManageBusinessScene" id="Nbl-co-H4q">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nbl-co-H4q" id="hpU-fC-bSU">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -483,10 +483,19 @@
                             <outlet property="delegate" destination="Nba-E7-REb" id="lzn-Tf-STn"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="guV-Ii-Sy0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9MI-eN-t74">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="K3L-vv-aIw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aH-xb-vze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3546" y="-369.75"/>
+            <point key="canvasLocation" x="4464" y="-369.75"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="VIq-uW-C0d">
@@ -507,7 +516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUp-eY-mY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4252.5" y="-111.75"/>
+            <point key="canvasLocation" x="5170.5" y="-111.75"/>
         </scene>
         <!--Sidebar Table View Controller-->
         <scene sceneID="J3w-bM-HHL">
@@ -535,7 +544,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycy-Kj-gAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5469" y="-117"/>
+            <point key="canvasLocation" x="6387" y="-117"/>
         </scene>
         <!--All Businesses Collection View Controller-->
         <scene sceneID="uZX-YL-WMe">
@@ -622,11 +631,7 @@
                             <outlet property="delegate" destination="Gl6-e8-pVf" id="yST-tM-43W"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="p43-Gl-HrR">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="kLn-6O-VqW">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="p43-Gl-HrR"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeR-HF-fPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1220,8 +1225,29 @@
             </objects>
             <point key="canvasLocation" x="5169" y="766.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7kD-Y0-yPA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Alp-qG-M6o" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9FW-kY-6Pr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nba-E7-REb" kind="relationship" relationship="rootViewController" id="Uik-yO-HY7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vtf-e8-08p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3546" y="-369.75"/>
+        </scene>
     </scenes>
     <resources>
         <image name="discounts" width="470" height="375"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="K3L-vv-aIw"/>
+    </inferredMetricsTieBreakers>
 </document>
